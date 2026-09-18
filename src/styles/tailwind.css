@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f0f9ff;
+  --foreground: #0c1a2e;
+  --primary: #0369a1;
+  --primary-foreground: #ffffff;
+  --secondary: #e0f2fe;
+  --secondary-foreground: #0369a1;
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --card: #ffffff;
+  --card-foreground: #0c1a2e;
+  --border: #cbd5e1;
+  --input: #e2e8f0;
+  --ring: #0369a1;
+  --radius: 8px;
+  --font-sans: 'DM Sans', sans-serif;
+
+  --status-solicitado-bg: #eff6ff;
+  --status-solicitado-text: #1d4ed8;
+  --status-solicitado-border: #bfdbfe;
+  --status-andamento-bg: #fffbeb;
+  --status-andamento-text: #b45309;
+  --status-andamento-border: #fde68a;
+  --status-concluido-bg: #f0fdf4;
+  --status-concluido-text: #15803d;
+  --status-concluido-border: #bbf7d0;
+  --status-cancelado-bg: #fef2f2;
+  --status-cancelado-text: #b91c1c;
+  --status-cancelado-border: #fecaca;
+  --status-pago-bg: #f0fdf4;
+  --status-pago-text: #15803d;
+  --status-pago-border: #bbf7d0;
+  --status-pendente-bg: #fffbeb;
+  --status-pendente-text: #b45309;
+  --status-pendente-border: #fde68a;
+  --status-ativo-bg: #f0fdf4;
+  --status-ativo-text: #15803d;
+  --status-ativo-border: #bbf7d0;
+  --status-inativo-bg: #f8fafc;
+  --status-inativo-text: #64748b;
+  --status-inativo-border: #e2e8f0;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  .status-solicitado {
+    background-color: var(--status-solicitado-bg);
+    color: var(--status-solicitado-text);
+    border: 1px solid var(--status-solicitado-border);
+  }
+  .status-andamento {
+    background-color: var(--status-andamento-bg);
+    color: var(--status-andamento-text);
+    border: 1px solid var(--status-andamento-border);
+  }
+  .status-concluido {
+    background-color: var(--status-concluido-bg);
+    color: var(--status-concluido-text);
+    border: 1px solid var(--status-concluido-border);
+  }
+  .status-cancelado {
+    background-color: var(--status-cancelado-bg);
+    color: var(--status-cancelado-text);
+    border: 1px solid var(--status-cancelado-border);
+  }
+  .status-pago {
+    background-color: var(--status-pago-bg);
+    color: var(--status-pago-text);
+    border: 1px solid var(--status-pago-border);
+  }
+  .status-pendente {
+    background-color: var(--status-pendente-bg);
+    color: var(--status-pendente-text);
+    border: 1px solid var(--status-pendente-border);
+  }
+  .status-ativo {
+    background-color: var(--status-ativo-bg);
+    color: var(--status-ativo-text);
+    border: 1px solid var(--status-ativo-border);
+  }
+  .status-inativo {
+    background-color: var(--status-inativo-bg);
+    color: var(--status-inativo-text);
+    border: 1px solid var(--status-inativo-border);
+  }
+  .card-alert {
+    background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+    border: 1px solid #fbbf24;
+  }
+  .sidebar-transition {
+    transition: width 300ms ease;
+  }
+  .fade-in {
+    animation: fadeIn 200ms ease forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .slide-up {
+    animation: slideUp 200ms ease forwards;
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .pulse-highlight {
+    animation: pulseHighlight 600ms ease;
+  }
+  @keyframes pulseHighlight {
+    0% { background-color: transparent; }
+    30% { background-color: #fef9c3; }
+    100% { background-color: transparent; }
+  }
+  .chart-gradient-primary {
+    stop-color: var(--primary);
+  }
+  .chart-gradient-fade {
+    stop-color: var(--primary);
+    stop-opacity: 0.05;
+  }
+}
